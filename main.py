@@ -2,27 +2,26 @@ import sys
 sys.path.insert(0, 'src')
 
 from steam_regional_prices.steam_api import search_game
-
-def print_block(text):
-        print("-" * 40)
-        print(text)
-        print("-" * 40)
-
+from steam_regional_prices.setup_regions import setup_regions
+from steam_regional_prices.print_block import print_block
 
 def main():
+    print_block("Steam Regional Price Tool")
+    print("Welcome. Pick two regions to compare pricing.")
+    set_up = setup_regions()
+    print(set_up)
 
-    while True: 
-        print_block("Steam Regional Price Tool")
+    while set_up != None: 
         app_query = input("Enter a game name: ")
         results = search_game(app_query)
 
         if not results:
             print_block("Invalid option.")
             choice = input("Enter K to try again or Q to quit:").lower()
-            if choice.lower() == "q":
+            if choice() == "q":
                 print_block("Exiting program.")
                 return
-            elif choice.lower() == "k":
+            elif choice() == "k":
                 continue
             print_block("Invalid option. Returning...")
             return
