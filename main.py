@@ -18,10 +18,10 @@ def main():
         if not results:
             print_block("Invalid option.")
             choice = input("Enter K to try again or Q to quit:").lower()
-            if choice() == "q":
+            if choice == "q":
                 print_block("Exiting program.")
                 return
-            elif choice() == "k":
+            elif choice == "k":
                 continue
             print_block("Invalid option. Returning...")
             return

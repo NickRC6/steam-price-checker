@@ -18,7 +18,7 @@ def setup_regions():
                 print("One or both region codes are invalid. Type LIST to see valid codes.")
         elif choice == "list":
             for code, country in STEAM_REGIONS.items():
-                print(code, country)
+                print(f"{code} - {country}")
         else:
             print("Invalid input.")
 
