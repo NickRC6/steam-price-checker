@@ -1,10 +1,9 @@
 import sys
 sys.path.insert(0, 'src')
 
-from steam_regional_prices.steam_api import search_game
+from steam_regional_prices.steam_api import search_game, price_fetcher
 from steam_regional_prices.setup_regions import setup_regions
 from steam_regional_prices.print_block import print_block
-from steam_regional_prices.price_fetcher import price_fetcher
 
 def main():
     print_block("Steam Regional Price Tool")
@@ -27,9 +26,9 @@ def main():
             print_block("Invalid option. Returning...")
             return
         else:
-             print_block(f"Your selected game is: {game_name}. Steam App ID: {app_id}.")
-             price_fetcher(app_id, regions)
-             return
+            print_block(f"Your selected game is: {game_name}. Steam App ID: {app_id}.")
+            price_fetcher(game_name, app_id, regions)
+            app_id = None
 
 
 if __name__ == "__main__":
