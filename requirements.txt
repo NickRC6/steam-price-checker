@@ -1,0 +1,4 @@
+# Python dependencies for steam-price-checker
+# Install with: pip install -r requirements.txt
+
+requests==2.32.3
