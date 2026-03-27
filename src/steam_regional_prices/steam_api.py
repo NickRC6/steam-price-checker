@@ -34,8 +34,9 @@ def price_fetcher(game_name, app_id, regions):
     
         r = requests.get(app_details_URL, params=params)
         data = r.json()
+        price = data[str(app_id)]["data"]["price_overview"]["final_formatted"]
 
         region_name = STEAM_REGIONS.get(region, region.upper())
 
         print_block(f"Price information of {game_name} in {region_name}:")
-        print_block(data)
+        print_block(price)
