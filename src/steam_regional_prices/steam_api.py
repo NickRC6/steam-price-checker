@@ -28,6 +28,7 @@ def price_fetcher(game_name, app_id, regions):
 
     dual_price = []
     dual_currency = []
+    regions_names = []
 
     for region in regions:
         params = {
@@ -42,9 +43,9 @@ def price_fetcher(game_name, app_id, regions):
         price = data[str(app_id)]["data"]["price_overview"]["final"] / 100 
 
         region_name = STEAM_REGIONS.get(region, region.upper())
+        regions_names.append(region_name)
 
-        print_block(f"Price information of {game_name} in {region_name}:")
-        print_block(price)
+        print_block(f"Price information of {game_name} in {region_name}:\n{price} {currency}")
         dual_price.append(price)
         dual_currency.append(currency)
-    currency_processor(dual_price, dual_currency, regions)
+    currency_processor(dual_price, dual_currency, regions_names)

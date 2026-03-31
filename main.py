@@ -26,7 +26,7 @@ def main():
             print_block("Invalid option. Returning...")
             return
         else:
-            print_block(f"Your selected game is: {game_name}. Steam App ID: {app_id}.")
+            print_block(f"Your selected game is: {game_name}.\nSteam App ID: {app_id}.")
             price_fetcher(game_name, app_id, regions)
             app_id = None
 
