@@ -18,7 +18,7 @@ def discount_calculator(data, dual_price, dual_currency, regions_names):
     saved = None
 
     if "rates" not in data:
-        print("It seems as the exchange API does not support this currency!\nTherefore, I cannot automatically give you the converted amount you'd be saving.")
+        print("It seems as the exchange API does not support one or both currencies!\nTherefore, I cannot automatically give you the converted amount you'd be saving.")
         return 
     
     if (dual_currency[0] == dual_currency[1]):
