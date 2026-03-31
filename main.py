@@ -2,6 +2,7 @@ import sys
 sys.path.insert(0, 'src')
 
 from steam_regional_prices.steam_api import search_game, price_fetcher
+from steam_regional_prices.regions import STEAM_REGIONS
 from steam_regional_prices.setup_regions import setup_regions
 from steam_regional_prices.print_block import print_block
 
@@ -9,7 +10,11 @@ def main():
     print_block("Steam Regional Price Tool")
     print("Welcome. Pick two regions to compare pricing.")
     regions = setup_regions()
-    print(f"Your selected regions are: {regions}")
+
+    order_labels = ["First", "Second"]
+    for i, region in enumerate(regions):
+        code_to_name = STEAM_REGIONS.get(region, region.upper())
+        print(f"{order_labels[i]} selected region: {code_to_name}")
 
     while regions != None: 
         game_name = input("Enter a game name: ")
