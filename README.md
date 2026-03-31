@@ -38,5 +38,5 @@ cd steam-price-checker
 ## 4. Run the Program
 
 ```bash
-PYTHONPATH=src python3 main.py
+python main.py
 ```
