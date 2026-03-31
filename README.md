@@ -1,5 +1,8 @@
 # Steam Price Checker
-This project is my "First Personal Project" for Boot.dev as my first submission. This is a CLI tool to compare Steam game prices across regions using the Steam Store API using Python. Basically, I chose this idea since I very often check regional prices ever since I've moved abroad. 
+This project is my "First Personal Project" for Boot.dev as my first submission. This is a CLI tool to compare Steam game prices across global regions using the Steam Store API using Python. Basically, I chose this idea since I very often check regional prices ever since I've moved abroad. 
+
+Input two regions from the available list, write down the game you want to compare and you'll get the prices of said game for both regions and currencies.
+Additionally, if both currencies are supported by the exchange API that is being used (Frankfurter API) you will see exactly how much money you would be saving. 
 
 ## 1. Install Python
 
